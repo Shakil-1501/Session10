@@ -94,10 +94,10 @@ def named_tuple_approach_fo_solution():
 
 
 def stock_exchange_creation():
-    Stock = namedtuple('Stock','company sym date openn close high')
+    
     data = []
     fake = Faker()
-    
+    Stock = namedtuple('Stock','company sym date openn close high')
 
     for i in range(100):
         company = fake.company()
@@ -108,13 +108,13 @@ def stock_exchange_creation():
        
         high  = random.randrange(openn,int(1.2*openn))
         close = random.randrange(int(0.8*openn),high)
-        data.append(gen_data(company, sym, date, openn,close, high))
+        data.append(Stock(company, sym, date, openn,close, high))
         print('comp-Sym Open High Close')
 
     for i in data:
         print(i.sym,i.openn,i.high,i.close)
     StockWeight = namedtuple('StockWeight','weight')
-    stock_weight = [ gen_stock_weight( weight = random.uniform(0.01,0.9) ) for _ in range(100) ]
+    stock_weight = [StockWeight( weight = random.uniform(0.01,0.9) ) for _ in range(100) ]
     open=[data[i].openn for i in range(100)]
     cont_s  = [ data[i].openn * stock_weight[i].weight for i in range(100) ]
     index_high  = [ data[i].high  * stock_weight[i].weight for i in range(100) ]
@@ -127,11 +127,11 @@ def stock_exchange_creation():
     l=Exchange(a,b,c, d)
     return b,c,d
 
-
+'''
 def gen_data(company, sym, date, openn, close, high):
     return Stock(company, sym, date, openn, close, high)
 
 
 def gen_stock_weight(weight):
     return StockWeight(weight)
-
+'''
