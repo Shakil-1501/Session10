@@ -90,12 +90,7 @@ def named_tuple_approach_fo_solution():
     return x,k,l,m
 
 
-def gen_data(company, sym, date, openn, close, high):
-    return Stock(company, sym, date, openn, close, high)
 
-
-def gen_stock_weight(weight):
-    return StockWeight(weight)
 
 
 def stock_exchange_creation():
@@ -131,4 +126,12 @@ def stock_exchange_creation():
     Exchange=namedtuple('Exchange','open cont_s index_high index_close')
     l=Exchange(a,b,c, d)
     return b,c,d
+
+
+def gen_data(company, sym, date, openn, close, high):
+    return Stock(company, sym, date, openn, close, high)
+
+
+def gen_stock_weight(weight):
+    return StockWeight(weight)
 
