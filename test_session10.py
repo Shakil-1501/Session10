@@ -5,7 +5,7 @@ import random
 
 
 def test_dict_approach():
-    c,d,e,f=session10.dict_approach_for_solution()
+    c,d,e=session10.dict_approach_for_solution()
     assert type(d) is int
 
 

@@ -11,6 +11,7 @@ import datetime
 from datetime import date
 from faker import Faker
 from decimal import Decimal
+from collections import namedtuple
 
 
 def dict_approach_for_solution():
