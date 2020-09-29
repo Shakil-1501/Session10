@@ -49,6 +49,7 @@ def dict_approach_for_solution():
 
 
 def named_tuple_approach_fo_solution():
+    start=perf_counter()
     z=[]
     dob=[]
     lat=[]
@@ -100,8 +101,9 @@ def gen_stock_weight(weight):
 def stock_exchange_creation():
     Stock = namedtuple('Stock','company sym date openn close high')
     data = []
+    
 
-    for i in range(10):
+    for i in range(100):
         company = fake.company()
         sym = company[0:2]+company[-2]
         openn = random.randrange(250,500)
@@ -116,11 +118,11 @@ def stock_exchange_creation():
     for i in data:
         print(i.sym,i.openn,i.high,i.close)
     StockWeight = namedtuple('StockWeight','weight')
-    stock_weight = [ gen_stock_weight( weight = random.uniform(0.01,0.9) ) for _ in range(10) ]
-    open=[data[i].openn for i in range(10)]
-    cont_s  = [ data[i].openn * stock_weight[i].weight for i in range(10) ]
-    index_high  = [ data[i].high  * stock_weight[i].weight for i in range(10) ]
-    index_close = [ data[i].close * stock_weight[i].weight for i in range(10) ]
+    stock_weight = [ gen_stock_weight( weight = random.uniform(0.01,0.9) ) for _ in range(100) ]
+    open=[data[i].openn for i in range(100)]
+    cont_s  = [ data[i].openn * stock_weight[i].weight for i in range(100) ]
+    index_high  = [ data[i].high  * stock_weight[i].weight for i in range(100) ]
+    index_close = [ data[i].close * stock_weight[i].weight for i in range(100) ]
     a=sum(open)
     b=sum(cont_s)
     c=sum(index_high)
