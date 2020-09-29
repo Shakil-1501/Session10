@@ -101,6 +101,7 @@ def gen_stock_weight(weight):
 def stock_exchange_creation():
     Stock = namedtuple('Stock','company sym date openn close high')
     data = []
+    fake = Faker()
     
 
     for i in range(100):
